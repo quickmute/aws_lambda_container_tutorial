@@ -49,8 +49,4 @@ ADD https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest
 COPY entry.sh /
 RUN chmod 755 /usr/bin/aws-lambda-rie /entry.sh
 ENTRYPOINT [ "/entry.sh" ]
-## Use this for local testing
-# ENTRYPOINT [ "/usr/bin/aws-lambda-rie", "/usr/local/bin/python", "-m", "awslambdaric" ]
-## Use this when you're ready to deploy to lambda
-# ENTRYPOINT [ "/usr/local/bin/python", "-m", "awslambdaric" ]
 CMD [ "app.handler" ]
